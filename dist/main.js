@@ -4,14 +4,14 @@ import Cube from "./cube.js";
 const init = () => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-        100,
+        45,
         window.innerWidth / window.innerHeight,
         0.1,
         100
     );
     const cubeArray = [];
 
-    const axis = new THREE.AxisHelper(100);
+    const axis = new THREE.AxisHelper(50);
     scene.add(axis);
 
     const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -33,19 +33,25 @@ const init = () => {
         }
     }
 
-    camera.position.z = 6.5;
+    camera.position.z = 17;
 
     const light = new THREE.DirectionalLight(0xffffff, 1.0);
     light.position.set(0, 0, 2);
     scene.add(light);
 
     let isKeyDown = false;
+    let frame = 0;
     const $spaceState = document.querySelector(".spacestate");
 
     document.addEventListener("keydown", (e) => {
         if (e.code === "Space") {
-            isKeyDown = true;
             $spaceState.classList.add("active");
+
+            //押しはじめ
+            if(isKeyDown === false){
+                isKeyDown = true;
+                frame = 0;
+            }
         }
     });
 
@@ -61,8 +67,9 @@ const init = () => {
 
         if (isKeyDown) {
             cubeArray.forEach((cube) => {
-                cube.update();
+                cube.update(frame);
             });
+            frame++;
         }
 
         renderer.render(scene, camera);

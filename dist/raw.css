@@ -11,9 +11,18 @@ body {
     z-index: 1;
 }
 
+.index {
+    position: absolute;
+    bottom: 24px;
+    line-height: 1;
+    right: 32px;
+    z-index: 1;
+    font-size: 40px;
+    font-weight: 600;
+}
+
 .ttl {
-    display: inline-block;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 300;
 }
 .ttl strong {
@@ -32,7 +41,7 @@ body {
     left: 50%;
     transform: translate(-50%, 0);
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     z-index: 0;
     padding: 0 20px;
 }
@@ -42,7 +51,7 @@ body {
     position: absolute;
     top: 0px;
     left: 0px;
-    background: rgb(81, 235, 42);
+    background: #e60000;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -51,7 +60,8 @@ body {
 }
 
 .spacestate.active.spacestate::before {
-    animation: spaceActive 0.8s 0s cubic-bezier(0.785, 0.135, 0.150, 0.860) infinite;
+    animation: spaceActive 0.8s 0s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+        infinite;
 }
 
 @keyframes spaceActive {
