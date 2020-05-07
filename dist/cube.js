@@ -21,8 +21,8 @@ export default class Cube {
         );
 
         if (frame / 2 > distance) {
-            this.mesh.rotation.y += 0.1;
-            this.mesh.rotation.z += 0.1;
+            this.mesh.rotation.y += 0.05;
+            this.mesh.rotation.z += 0.05;
         }
     }
 
