@@ -11,7 +11,7 @@
   },
   "scripts": {
     "server": "live-server .",
-    "css": "postcss dist/hw02/raw.css -o dist/hw02/style.css -w --map",
+    "css": "postcss dist/hw03/raw.css -o dist/hw03/style.css -w --map",
     "serve": "run-p server css"
   }
 }
